@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=3 uid="uid://cey86ntq1e2cm"]
+
+[ext_resource type="PackedScene" uid="uid://cjrlc7cka1404" path="res://Assets/Models/Sensors/rashod.blend" id="1_wffpl"]
+[ext_resource type="Script" path="res://Scenes/Sensors/flow_sensor.gd" id="2_m752c"]
+[ext_resource type="PackedScene" uid="uid://cna3dpc5kc5k5" path="res://Scenes/UI/sensor_zoom_overlay.tscn" id="3_e6kvv"]
+
+[node name="FlowSensor" instance=ExtResource("1_wffpl")]
+script = ExtResource("2_m752c")
+
+[node name="SensorZoomOverlay" parent="." index="0" node_paths=PackedStringArray("camera") instance=ExtResource("3_e6kvv")]
+camera = NodePath("../Camera3D")
+
+[node name="Camera3D" type="Camera3D" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00274533, 0.225797, 0.418435)
+cull_mask = 2
+fov = 11.7872
+far = 0.5
+
+[node name="Value" type="Label3D" parent="." index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.225, 0.04)
+layers = 3
+pixel_size = 0.0001
+text = "0.0 кг/с"
+font_size = 48
+
+[node name="rashod" parent="." index="3"]
+layers = 3
+
+[node name="StaticBody3D" parent="rashod" index="0"]
+collision_layer = 2
+collision_mask = 0

@@ -1,0 +1,37 @@
+[gd_scene load_steps=5 format=3 uid="uid://c1d2anmxqfg13"]
+
+[ext_resource type="Script" path="res://Scenes/Other/leak_detector.gd" id="1_qa5tn"]
+[ext_resource type="Texture2D" uid="uid://7ad5d3s4ytcx" path="res://Assets/UI/attention_done.png" id="2_xxwja"]
+[ext_resource type="AudioStream" uid="uid://b64ne0kpdvw3t" path="res://Assets/Sound/Other/leak_found.mp3" id="3_lu1yk"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_axutm"]
+size = Vector3(0.111557, 0.288147, 0.497139)
+
+[node name="LeakDetector" type="MeshInstance3D"]
+script = ExtResource("1_qa5tn")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+collision_layer = 0
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.151368, -0.284576, -0.00130635)
+shape = SubResource("BoxShape3D_axutm")
+
+[node name="Warning" type="Sprite3D" parent="."]
+transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, -0.152693, -0.258541, 0)
+visible = false
+billboard = 1
+no_depth_test = true
+texture_filter = 1
+texture = ExtResource("2_xxwja")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_lu1yk")
+volume_db = -12.0
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -1,0 +1,35 @@
+[gd_scene load_steps=6 format=3 uid="uid://cjq7wgewst7vo"]
+
+[ext_resource type="Shader" path="res://Assets/Shaders/highlight2D.gdshader" id="1_nh20k"]
+[ext_resource type="Texture2D" uid="uid://crx8xkn3cwsqv" path="res://Assets/Models/Switch2D/tumblerr.png" id="2_in6x1"]
+[ext_resource type="Script" path="res://Scenes/Switch2D/Knob/knob.gd" id="3_tr5o2"]
+[ext_resource type="AudioStream" uid="uid://0jw5y5obqtw8" path="res://Assets/Sound/Other/knob.mp3" id="4_trwly"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_x35lp"]
+resource_local_to_scene = true
+shader = ExtResource("1_nh20k")
+shader_parameter/enable = false
+shader_parameter/color = Color(0.623529, 1, 1, 1)
+shader_parameter/width = 7.0
+shader_parameter/pattern = 2
+shader_parameter/inside = true
+shader_parameter/add_margins = false
+shader_parameter/number_of_images = Vector2(1, 1)
+
+[node name="Knob" type="TextureRect"]
+material = SubResource("ShaderMaterial_x35lp")
+offset_right = 40.0
+offset_bottom = 40.0
+pivot_offset = Vector2(20, 14)
+texture = ExtResource("2_in6x1")
+expand_mode = 2
+stretch_mode = 5
+script = ExtResource("3_tr5o2")
+
+[node name="KnobSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_trwly")
+volume_db = -15.0
+
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

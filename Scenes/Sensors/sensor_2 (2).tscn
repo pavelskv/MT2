@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://b5akcaop1kte4"]
+
+[ext_resource type="PackedScene" uid="uid://cckf2mhepdo6w" path="res://Assets/Models/Sensors/dat_2.blend" id="1_1wkfu"]
+[ext_resource type="Script" path="res://Scenes/Sensors/sensor_2.gd" id="2_y3dgl"]
+[ext_resource type="PackedScene" uid="uid://cna3dpc5kc5k5" path="res://Scenes/UI/sensor_zoom_overlay.tscn" id="3_vowgh"]
+[ext_resource type="PackedScene" uid="uid://buyjemxmpjkf3" path="res://Scenes/Sensors/sensor_arrow.tscn" id="4_bq3se"]
+
+[node name="Sensor2" instance=ExtResource("1_1wkfu")]
+script = ExtResource("2_y3dgl")
+
+[node name="SensorZoomOverlay" parent="." index="0" node_paths=PackedStringArray("camera") instance=ExtResource("3_vowgh")]
+camera = NodePath("../Camera3D")
+
+[node name="SensorArrow" parent="." index="1" instance=ExtResource("4_bq3se")]
+transform = Transform3D(1, 0, 0, 0, 0.99897, -0.045363, 0, 0.045363, 0.99897, 0.0020434, 0.265293, -0.00686356)
+
+[node name="Dat" parent="." index="2"]
+layers = 3
+
+[node name="StaticBody3D" parent="Dat" index="0"]
+collision_layer = 2
+collision_mask = 0
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." index="3"]
+transform = Transform3D(-0.158968, 0, 0.987284, 0, 1, 0, -0.987284, 0, -0.158968, 1.75255, 0, 0)
+visible = false
+
+[node name="Camera3D" type="Camera3D" parent="." index="4"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.729738, 0.263109, -0.00291938)
+visible = false
+cull_mask = 2
+fov = 11.7872

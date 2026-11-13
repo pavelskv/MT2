@@ -1,0 +1,108 @@
+[gd_scene load_steps=6 format=3 uid="uid://ommo60x3j7op"]
+
+[ext_resource type="Script" path="res://Scenes/UI/Materials/Materials_menu.gd" id="1_p5blq"]
+[ext_resource type="StyleBox" uid="uid://bnk0jfjrg8vlo" path="res://Scenes/UI/StartMenu/button_style_box_flat.tres" id="2_pwq76"]
+[ext_resource type="FontFile" uid="uid://cjyrxmb4gujue" path="res://Assets/Fonts/BAHNSCHRIFT.TTF" id="3_0cikk"]
+[ext_resource type="FontVariation" uid="uid://dighmt70mnp3g" path="res://Assets/Fonts/semibold_font_variation.tres" id="4_2wtqu"]
+[ext_resource type="FontVariation" uid="uid://drfiep1yn45dh" path="res://Assets/Fonts/bold_font_variation.tres" id="5_cwlks"]
+
+[node name="Materials_menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_p5blq")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 60
+theme_override_constants/margin_top = 45
+theme_override_constants/margin_right = 60
+theme_override_constants/margin_bottom = 30
+
+[node name="Panel" type="Panel" parent="MarginContainer"]
+layout_mode = 2
+theme_override_styles/panel = ExtResource("2_pwq76")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainerPanelPic" type="MarginContainer" parent="MarginContainer/Panel/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 70
+theme_override_constants/margin_top = 70
+theme_override_constants/margin_right = 70
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/Panel/VBoxContainer/MarginContainerPanelPic"]
+layout_mode = 2
+
+[node name="PanelLabelMaterials" type="Label" parent="MarginContainer/Panel/VBoxContainer/MarginContainerPanelPic/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_cwlks")
+theme_override_font_sizes/font_size = 55
+text = "МАТЕРИАЛЫ"
+horizontal_alignment = 1
+
+[node name="RichTextLabelTask" type="RichTextLabel" parent="MarginContainer/Panel/VBoxContainer/MarginContainerPanelPic/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/default_color = Color(0.168627, 0.0823529, 0.0862745, 1)
+theme_override_fonts/normal_font = ExtResource("3_0cikk")
+theme_override_fonts/bold_font = ExtResource("4_2wtqu")
+theme_override_font_sizes/normal_font_size = 23
+theme_override_font_sizes/bold_font_size = 28
+theme_override_font_sizes/italics_font_size = 23
+theme_override_font_sizes/bold_italics_font_size = 23
+theme_override_font_sizes/mono_font_size = 23
+bbcode_enabled = true
+text = "[code]1. [url=https://sdo.smolate.ru/kbase/resource/view/uid/a08dc360bca87e6c95d2edf59d59eac5]Целевой инструктаж перед выполнением работ[/url]
+2. [url=https://sdo.smolate.ru/kbase/resource/view/uid/51cc1a5dfc0b4c9c16c07da18336457e]Паспорт на насосный агрегат[/url]
+3. [url=https://sdo.smolate.ru/kbase/resource/view/uid/2f9c1d889593b37c56d651f8f283bb5e]Руководство по эксплуатации насосного агрегата[/url]
+4. [url=https://sdo.smolate.ru/kbase/resource/view/uid/f184d76e0dd07142563fb700f645b705]Система КВС-1[/url]
+5. [url=https://sdo.smolate.ru/kbase/resource/view/uid/f0a9cb74e18d217a5e425e6579346a79]Программа испытаний[/url]
+[/code]"
+fit_content = true
+scroll_active = false
+autowrap_mode = 2
+shortcut_keys_enabled = false
+
+[node name="MarginContainerPanelFooter" type="MarginContainer" parent="MarginContainer/Panel/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_top = -40
+theme_override_constants/margin_bottom = 25
+
+[node name="ContinueButton" type="Button" parent="MarginContainer/Panel/VBoxContainer/MarginContainerPanelFooter"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0.317647, 0.176471, 0.184314, 1)
+theme_override_colors/font_hover_color = Color(0.371731, 0.175429, 0.14903, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0.621524, 0.621524, 0.621524, 1)
+theme_override_fonts/font = ExtResource("5_cwlks")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = ExtResource("2_pwq76")
+theme_override_styles/hover = ExtResource("2_pwq76")
+theme_override_styles/pressed = ExtResource("2_pwq76")
+theme_override_styles/disabled = ExtResource("2_pwq76")
+theme_override_styles/focus = ExtResource("2_pwq76")
+text = "ПРОДОЛЖИТЬ"
+
+[connection signal="meta_clicked" from="MarginContainer/Panel/VBoxContainer/MarginContainerPanelPic/VBoxContainer/RichTextLabelTask" to="." method="_on_rich_text_label_task_meta_clicked"]
+[connection signal="pressed" from="MarginContainer/Panel/VBoxContainer/MarginContainerPanelFooter/ContinueButton" to="." method="_on_continue_button_pressed"]

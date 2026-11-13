@@ -1,0 +1,68 @@
+[gd_scene load_steps=3 format=3 uid="uid://c3q23nwo788vn"]
+
+[ext_resource type="Script" path="res://Scenes/Autoloads/RetryScreen/retry_screen.gd" id="1_hy8l2"]
+[ext_resource type="AudioStream" uid="uid://42fbded3v8rx" path="res://Assets/Sound/Other/retry.mp3" id="2_5bsx4"]
+
+[node name="RetryScreenContainer" type="CanvasLayer"]
+script = ExtResource("1_hy8l2")
+
+[node name="Sound" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("2_5bsx4")
+volume_db = -4.0
+
+[node name="RetryScreen" type="ColorRect" parent="."]
+unique_name_in_owner = true
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0784314, 0.0784314, 0.0784314, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="RetryScreen"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="RetryScreen/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 100
+theme_override_constants/margin_top = 100
+theme_override_constants/margin_right = 100
+
+[node name="RichTextLabel" type="RichTextLabel" parent="RetryScreen/VBoxContainer/MarginContainer"]
+clip_contents = false
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 55
+theme_override_font_sizes/bold_font_size = 56
+theme_override_font_sizes/italics_font_size = 56
+theme_override_font_sizes/bold_italics_font_size = 56
+theme_override_font_sizes/mono_font_size = 56
+bbcode_enabled = true
+text = "[center]Вы все [color=green]правильно[/color] сделали [/center]
+
+[fill]Вовремя обнаружили неисправность и доложили на БПУ, тем самым предотвратили развитие аварийной ситуации по худшему сценарию. [/fill]
+"
+scroll_active = false
+shortcut_keys_enabled = false
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="RetryScreen/VBoxContainer"]
+custom_minimum_size = Vector2(0, 70)
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 28
+theme_override_font_sizes/bold_font_size = 28
+theme_override_font_sizes/italics_font_size = 28
+theme_override_font_sizes/bold_italics_font_size = 28
+theme_override_font_sizes/mono_font_size = 28
+bbcode_enabled = true
+text = "[center][i](нажмите [color=yellow]любую клавишу[/color] для перезапуска)"
+scroll_active = false
+shortcut_keys_enabled = false
+
+[connection signal="finished" from="Sound" to="." method="_on_sound_finished"]

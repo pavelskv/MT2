@@ -1,0 +1,46 @@
+[gd_scene load_steps=9 format=3 uid="uid://ttyvn8ch8lee"]
+
+[ext_resource type="Shader" path="res://Assets/Shaders/water.gdshader" id="1_iarrn"]
+[ext_resource type="Script" path="res://Scenes/WaterPool/water_pool.gd" id="2_5t8c7"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_1bl22"]
+noise_type = 3
+seed = 5
+fractal_type = 2
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_e1mxk"]
+seamless = true
+as_normal_map = true
+bump_strength = 5.0
+noise = SubResource("FastNoiseLite_1bl22")
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_ufhi8"]
+noise_type = 3
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_aq7kx"]
+seamless = true
+as_normal_map = true
+bump_strength = 4.5
+noise = SubResource("FastNoiseLite_ufhi8")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ad1is"]
+render_priority = 0
+shader = ExtResource("1_iarrn")
+shader_parameter/albedo = Color(0.110833, 0.323717, 0.430339, 1)
+shader_parameter/metallic = 0.0
+shader_parameter/roughness = 0.0
+shader_parameter/wave_direction = Vector2(0.3, -0.2)
+shader_parameter/wave_2_direction = Vector2(-0.2, 0.3)
+shader_parameter/time_scale = 0.015
+shader_parameter/albedo2 = Color(0.0156863, 0.0313726, 0.00784314, 1)
+shader_parameter/texture_normal = SubResource("NoiseTexture2D_e1mxk")
+shader_parameter/texture_normal2 = SubResource("NoiseTexture2D_aq7kx")
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_4f0gh"]
+
+[node name="WaterPool" type="MeshInstance3D"]
+transform = Transform3D(0.367027, 0, 0, 0, 0.0207564, 0, 0, 0, 0.486346, -2.20731, -0.0197982, -3.75589)
+material_override = SubResource("ShaderMaterial_ad1is")
+cast_shadow = 0
+mesh = SubResource("CylinderMesh_4f0gh")
+script = ExtResource("2_5t8c7")

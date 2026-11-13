@@ -1,0 +1,108 @@
+[gd_scene load_steps=8 format=3 uid="uid://bjc8sgrrbys3j"]
+
+[ext_resource type="Texture2D" uid="uid://cjumy58nyqtuh" path="res://Assets/Slider/slider_scale.png" id="1_t6vid"]
+[ext_resource type="Script" path="res://Scenes/UI/Slider/slider.gd" id="1_twefh"]
+[ext_resource type="Texture2D" uid="uid://bniv8o1o7yrqx" path="res://Assets/Slider/slider_arrow.png" id="2_5pivs"]
+[ext_resource type="Texture2D" uid="uid://jwshes01ny76" path="res://Assets/Slider/slider_close_deny.png" id="2_vbdqg"]
+[ext_resource type="Texture2D" uid="uid://bwpicmts2dvlr" path="res://Assets/Slider/slider_back.png" id="4_vm85u"]
+[ext_resource type="Texture2D" uid="uid://d3pw4ql6rhwaa" path="res://Assets/UI/mouse_2.png" id="5_yyhem"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_2fu8r"]
+viewport_path = NodePath("Subviewport")
+
+[node name="Slider" type="Node3D"]
+script = ExtResource("1_twefh")
+jump_step = 20.0
+
+[node name="Subviewport" type="SubViewport" parent="."]
+transparent_bg = true
+size = Vector2i(720, 250)
+
+[node name="Control" type="Control" parent="Subviewport"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CloseDeny" type="TextureRect" parent="Subviewport/Control"]
+visible = false
+layout_mode = 0
+offset_top = 147.0
+offset_right = 604.0
+offset_bottom = 243.0
+texture = ExtResource("2_vbdqg")
+
+[node name="Border" type="TextureRect" parent="Subviewport/Control"]
+modulate = Color(0.517647, 0.517647, 0.517647, 0.635294)
+layout_mode = 0
+offset_right = 600.0
+offset_bottom = 144.0
+texture = ExtResource("4_vm85u")
+
+[node name="MouseTooltip" type="TextureRect" parent="Subviewport/Control"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 588.0
+offset_top = 2.0
+offset_right = 761.0
+offset_bottom = 139.0
+texture = ExtResource("5_yyhem")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="Scale" type="TextureRect" parent="Subviewport/Control"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 26.0
+offset_top = -14.0
+offset_right = 626.0
+offset_bottom = 119.0
+scale = Vector2(0.9, 0.9)
+texture = ExtResource("1_t6vid")
+expand_mode = 1
+stretch_mode = 2
+
+[node name="Arrow" type="TextureRect" parent="Subviewport/Control"]
+unique_name_in_owner = true
+layout_mode = 1
+offset_left = -206.0
+offset_top = 25.0
+offset_right = 394.0
+offset_bottom = 169.0
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("2_5pivs")
+
+[node name="Value" type="Label" parent="Subviewport/Control/Arrow"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.502084
+anchor_top = 0.788194
+anchor_right = 0.502084
+anchor_bottom = 0.788194
+offset_left = -30.0
+offset_top = -19.25
+offset_right = 27.0
+offset_bottom = 15.75
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 33
+text = "0%"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="SliderInfo" type="Sprite3D" parent="."]
+transform = Transform3D(0.11, 0, 0, 0, 0.12, 0, 0, 0, 1, 0, 0, 0)
+sorting_offset = 1.0
+billboard = 1
+no_depth_test = true
+texture = SubResource("ViewportTexture_2fu8r")
+
+[node name="DebugCamera3D" type="Camera3D" parent="."]
+transform = Transform3D(0.341659, 0, -0.939824, 0, 1, 0, 0.939824, 0, 0.341659, -0.634337, -0.118072, 0.244296)
+visible = false

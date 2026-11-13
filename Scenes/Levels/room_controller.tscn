@@ -1,0 +1,170 @@
+[gd_scene load_steps=4 format=3 uid="uid://dpahowoihnm0l"]
+
+[ext_resource type="Script" path="res://Scenes/Levels/room_controller.gd" id="1_3l7ip"]
+[ext_resource type="AudioStream" uid="uid://cljxojidp4n2o" path="res://Assets/Sound/Ambience/empty_room.mp3" id="2_2rouw"]
+[ext_resource type="PackedScene" uid="uid://dfhqomf2egipv" path="res://Scenes/Other/speedy_timer.tscn" id="2_wvnkp"]
+
+[node name="Room_controller" type="CanvasLayer"]
+script = ExtResource("1_3l7ip")
+
+[node name="WaitForAirGoneByTimer" type="Timer" parent="."]
+wait_time = 15.0
+one_shot = true
+
+[node name="WaitForAirGoneBy_UI" type="MarginContainer" parent="WaitForAirGoneByTimer"]
+visible = false
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -600.0
+offset_bottom = 153.0
+grow_horizontal = 0
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_right = 20
+
+[node name="ColorRect" type="ColorRect" parent="WaitForAirGoneByTimer/WaitForAirGoneBy_UI"]
+layout_mode = 2
+color = Color(0.117647, 0.117647, 0.117647, 0.478431)
+
+[node name="Timer_caption" type="Label" parent="WaitForAirGoneByTimer/WaitForAirGoneBy_UI/ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/outline_size = 2
+theme_override_constants/shadow_outline_size = 4
+theme_override_font_sizes/font_size = 34
+text = "До окончания завоздушивания"
+horizontal_alignment = 1
+
+[node name="Timer_count" type="Label" parent="WaitForAirGoneByTimer/WaitForAirGoneBy_UI/ColorRect"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -61.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/outline_size = 2
+theme_override_constants/shadow_outline_size = 4
+theme_override_font_sizes/font_size = 60
+text = "60"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="GoodCallTimer" type="Timer" parent="."]
+wait_time = 10.0
+one_shot = true
+
+[node name="GoodCallTimer_UI" type="MarginContainer" parent="GoodCallTimer"]
+visible = false
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -346.0
+offset_bottom = 153.0
+grow_horizontal = 0
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_right = 20
+
+[node name="ColorRect" type="ColorRect" parent="GoodCallTimer/GoodCallTimer_UI"]
+layout_mode = 2
+color = Color(0.117647, 0.117647, 0.117647, 0.478431)
+
+[node name="Timer_caption" type="Label" parent="GoodCallTimer/GoodCallTimer_UI/ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/outline_size = 2
+theme_override_constants/shadow_outline_size = 4
+theme_override_font_sizes/font_size = 34
+text = "До включения"
+horizontal_alignment = 1
+
+[node name="Timer_count" type="Label" parent="GoodCallTimer/GoodCallTimer_UI/ColorRect"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -61.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/outline_size = 2
+theme_override_constants/shadow_outline_size = 4
+theme_override_font_sizes/font_size = 60
+text = "10"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="FinalTimer" type="Timer" parent="."]
+editor_description = "Таймер выбега вала"
+wait_time = 20.0
+one_shot = true
+
+[node name="FinalTimer_UI" type="MarginContainer" parent="FinalTimer"]
+visible = false
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -346.0
+offset_bottom = 153.0
+grow_horizontal = 0
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_right = 20
+
+[node name="ColorRect" type="ColorRect" parent="FinalTimer/FinalTimer_UI"]
+layout_mode = 2
+color = Color(0.117647, 0.117647, 0.117647, 0.478431)
+
+[node name="Timer_caption" type="Label" parent="FinalTimer/FinalTimer_UI/ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/outline_size = 2
+theme_override_constants/shadow_outline_size = 4
+theme_override_font_sizes/font_size = 34
+text = "Выбег вала"
+horizontal_alignment = 1
+
+[node name="Timer_count" type="Label" parent="FinalTimer/FinalTimer_UI/ColorRect"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -61.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/outline_size = 2
+theme_override_constants/shadow_outline_size = 4
+theme_override_font_sizes/font_size = 60
+text = "20"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Timer30min" parent="." instance=ExtResource("2_wvnkp")]
+
+[node name="Ambience" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_2rouw")
+autoplay = true
+
+[node name="TimerOneMinute" type="Timer" parent="."]
+wait_time = 60.0
+one_shot = true
+
+[connection signal="timeout" from="WaitForAirGoneByTimer" to="." method="_on_wait_for_air_gone_by_timer_timeout"]
+[connection signal="timeout" from="GoodCallTimer" to="." method="_on_good_call_timer_timeout"]
+[connection signal="timeout" from="FinalTimer" to="." method="_on_final_timer_timeout"]
+[connection signal="speedy_timer_finished" from="Timer30min" to="." method="_on_timer_30_min_speedy_timer_finished"]
+[connection signal="finished" from="Ambience" to="." method="_on_ambience_finished"]
+[connection signal="timeout" from="TimerOneMinute" to="." method="_on_timer_one_minute_timeout"]

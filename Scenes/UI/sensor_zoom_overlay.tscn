@@ -1,0 +1,35 @@
+[gd_scene load_steps=2 format=3 uid="uid://cna3dpc5kc5k5"]
+
+[ext_resource type="Script" path="res://Scenes/UI/sensor_zoom_overlay.gd" id="1_5wm2o"]
+
+[node name="SensorZoomOverlay" type="SubViewportContainer"]
+visible = false
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -305.0
+offset_top = -250.0
+offset_right = -55.0
+grow_horizontal = 0
+grow_vertical = 0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+stretch = true
+script = ExtResource("1_5wm2o")
+
+[node name="SubViewport" type="SubViewport" parent="."]
+transparent_bg = true
+handle_input_locally = false
+gui_disable_input = true
+gui_snap_controls_to_pixels = false
+sdf_oversize = 0
+canvas_cull_mask = 2
+size = Vector2i(250, 250)
+render_target_update_mode = 0
+
+[node name="Camera3D" type="Camera3D" parent="SubViewport"]
+unique_name_in_owner = true
+near = 0.01
+far = 1.0

@@ -1,0 +1,55 @@
+[gd_scene load_steps=2 format=3 uid="uid://dfhqomf2egipv"]
+
+[ext_resource type="Script" path="res://Scenes/Other/speedy_timer.gd" id="1_su76p"]
+
+[node name="SpeedyTimer" type="Node"]
+script = ExtResource("1_su76p")
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="Timer_UI" type="MarginContainer" parent="."]
+visible = false
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -397.0
+offset_bottom = 153.0
+grow_horizontal = 0
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_right = 20
+
+[node name="ColorRect" type="ColorRect" parent="Timer_UI"]
+layout_mode = 2
+color = Color(0.117647, 0.117647, 0.117647, 0.478431)
+
+[node name="Timer_caption" type="Label" parent="Timer_UI/ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/outline_size = 2
+theme_override_constants/shadow_outline_size = 4
+theme_override_font_sizes/font_size = 34
+text = "Контроль работы"
+horizontal_alignment = 1
+
+[node name="Timer_count" type="Label" parent="Timer_UI/ColorRect"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -61.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/outline_size = 2
+theme_override_constants/shadow_outline_size = 4
+theme_override_font_sizes/font_size = 60
+text = "30 мин"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

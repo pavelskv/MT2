@@ -1,0 +1,39 @@
+[gd_scene load_steps=6 format=3 uid="uid://bp1s6gmhp180l"]
+
+[ext_resource type="PackedScene" uid="uid://tap5ughmh38v" path="res://Assets/Models/Vents/vent3.blend" id="1_7d5f3"]
+[ext_resource type="Script" path="res://Scenes/Vents/Base/Straight small/vent_straight_small.gd" id="2_ff2mo"]
+[ext_resource type="Material" uid="uid://bg8kovdq206bs" path="res://Assets/Materials/vents.tres" id="3_wi1rn"]
+[ext_resource type="AudioStream" uid="uid://onxi7obdkkjj" path="res://Assets/Sound/Vents/vent1.mp3" id="4_we86l"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_l5e0e"]
+size = Vector3(0.0911865, 0.101318, 0.136719)
+
+[node name="VentStrightSmall" instance=ExtResource("1_7d5f3")]
+script = ExtResource("2_ff2mo")
+
+[node name="vent_vozd" parent="." index="0"]
+transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 0, 0, 0)
+material_overlay = ExtResource("3_wi1rn")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="vent_vozd" index="0"]
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="vent_vozd/StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00128174, 0.021347, 0.000160217)
+shape = SubResource("BoxShape3D_l5e0e")
+
+[node name="Label3D" type="Label3D" parent="." index="1"]
+unique_name_in_owner = true
+transform = Transform3D(-2.15068e-08, -0.628561, 0.777761, -2.74753e-08, 0.777761, 0.628561, -1, -7.85086e-09, -3.3997e-08, 0, 0.0732144, -0.000723764)
+top_level = true
+visible = false
+pixel_size = 0.001
+billboard = 1
+no_depth_test = true
+text = "Открыть вентиль"
+font_size = 43
+outline_size = 6
+
+[node name="TurnSound" type="AudioStreamPlayer3D" parent="." index="2"]
+stream = ExtResource("4_we86l")

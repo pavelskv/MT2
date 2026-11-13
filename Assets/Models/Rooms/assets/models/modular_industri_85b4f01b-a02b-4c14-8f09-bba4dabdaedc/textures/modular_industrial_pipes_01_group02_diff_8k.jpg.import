@@ -1,0 +1,36 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://ce3wco283bt33"
+path.s3tc="res://.godot/imported/modular_industrial_pipes_01_group02_diff_8k.jpg-987177390f7913af4e5bdb754f2def5a.s3tc.ctex"
+path.etc2="res://.godot/imported/modular_industrial_pipes_01_group02_diff_8k.jpg-987177390f7913af4e5bdb754f2def5a.etc2.ctex"
+metadata={
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
+"vram_texture": true
+}
+
+[deps]
+
+source_file="res://Assets/Models/Rooms/assets/models/modular_industri_85b4f01b-a02b-4c14-8f09-bba4dabdaedc/textures/modular_industrial_pipes_01_group02_diff_8k.jpg"
+dest_files=["res://.godot/imported/modular_industrial_pipes_01_group02_diff_8k.jpg-987177390f7913af4e5bdb754f2def5a.s3tc.ctex", "res://.godot/imported/modular_industrial_pipes_01_group02_diff_8k.jpg-987177390f7913af4e5bdb754f2def5a.etc2.ctex"]
+
+[params]
+
+compress/mode=2
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/hdr_compression=1
+compress/normal_map=0
+compress/channel_pack=0
+mipmaps/generate=true
+mipmaps/limit=-1
+roughness/mode=0
+roughness/src_normal=""
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=0

@@ -1,0 +1,68 @@
+[gd_scene load_steps=2 format=3 uid="uid://cyrkrpjwidpv6"]
+
+[ext_resource type="Script" path="res://Scenes/UI/Messages/message_ui.gd" id="1_e6ys2"]
+
+[node name="MessageUI" type="Control"]
+z_index = 500
+layout_mode = 3
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -241.0
+grow_horizontal = 2
+grow_vertical = 0
+script = ExtResource("1_e6ys2")
+auto_skip_on_audio_end = true
+
+[node name="NameBG" type="ColorRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.155
+offset_top = 18.0
+offset_right = 78.6
+offset_bottom = 67.0
+color = Color(0.423529, 0.301961, 1, 0.364706)
+
+[node name="NameCenterContainer" type="CenterContainer" parent="NameBG"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MessageBG" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 66.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+color = Color(0, 0, 0, 0.623529)
+
+[node name="MessageMarginContainer" type="MarginContainer" parent="MessageBG"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -67.0
+offset_bottom = 69.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_right = 30
+
+[node name="TimeToSkipCutScene" type="Timer" parent="."]
+editor_description = "Спустя время этого таймера, можно будет пропустить катсцену нажатием кнопки"
+
+[connection signal="tree_entered" from="." to="." method="_on_tree_entered"]
+[connection signal="tree_exiting" from="." to="." method="_on_tree_exiting"]
+[connection signal="child_entered_tree" from="MessageBG/MessageMarginContainer" to="." method="_on_message_margin_container_child_entered_tree"]
+[connection signal="timeout" from="TimeToSkipCutScene" to="." method="_on_time_to_skip_cut_scene_timeout"]

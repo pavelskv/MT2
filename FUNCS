@@ -1,0 +1,54 @@
+%Water.start_flood() - начать затопление своего помещения
+		
+
+%Phone.enabled = true
+%Phone.clicked
+%Phone.is_ringing = true
+	
+	_on_wait_for_air_gone_by_timer_timeout
+	
+WinScreen.show() - показать экран успешного прохождения теста (autoloads)
+
+LossScreen.show() - показать экран провала прохождения теста (autoloads)
+
+%Pump1.full_power = true - включить дрожание насоса
+%Pump1Sensor2.set_pressure_08()
+
+
+%Pump1WaterDropping.visible
+%Pump1WaterFloating.visible
+
+%Pump1Sensor1.set_pressure_017()
+%Pump1Sensor1.set_pressure_0()
+
+%Pump1Sensor2.set_pressure_017()
+%Pump1Sensor2.set_pressure_08()
+%Pump1Sensor2.set_pressure_0()
+
+
+
+
+%Pump2WaterCircleDrops.visible
+
+
+%Pump2Valve1.StartBrokenVentNotifyTimer()
+
+
+%RoomController.to_other_systems_closed
+
+
+
+
+%CommonLineVent1.is_turned
+
+
+
+
+ГОЛОСА:
+	Вы = Борис
+	ВИУР/БПУ = Сергей
+	ИНСТРУКТОР = Тарас
+	"" = Наталья
+
+
+

@@ -1,0 +1,70 @@
+[gd_scene load_steps=2 format=3 uid="uid://cuo0r13ggphu6"]
+
+[ext_resource type="Script" path="res://addons/rb_voice_generator/editor/window_dialogs/_components/auto_voice_selector.gd" id="1_cceih"]
+
+[node name="AutoVoiceSelector" type="MarginContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 5
+script = ExtResource("1_cceih")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="NameSelector" type="VBoxContainer" parent="HBoxContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+
+[node name="NameLabel" type="Label" parent="HBoxContainer/NameSelector"]
+layout_mode = 2
+text = "Имя"
+
+[node name="NameData" type="LineEdit" parent="HBoxContainer/NameSelector"]
+unique_name_in_owner = true
+layout_mode = 2
+editable = false
+expand_to_text_length = true
+context_menu_enabled = false
+virtual_keyboard_enabled = false
+shortcut_keys_enabled = false
+middle_mouse_paste_enabled = false
+selecting_enabled = false
+
+[node name="HSeparator" type="HSeparator" parent="HBoxContainer/NameSelector"]
+layout_mode = 2
+
+[node name="VoiceSelector" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="VoiceLabel" type="Label" parent="HBoxContainer/VoiceSelector"]
+layout_mode = 2
+text = "Голос"
+
+[node name="VoicesList" type="OptionButton" parent="HBoxContainer/VoiceSelector"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+item_count = 6
+selected = 0
+popup/item_0/text = "Борис"
+popup/item_0/id = 0
+popup/item_1/text = "Тарас"
+popup/item_1/id = 1
+popup/item_2/text = "Сергей"
+popup/item_2/id = 2
+popup/item_3/text = "Наталья"
+popup/item_3/id = 3
+popup/item_4/text = "Марфа"
+popup/item_4/id = 4
+popup/item_5/text = "Александра"
+popup/item_5/id = 5
+
+[node name="HSeparator" type="HSeparator" parent="HBoxContainer/VoiceSelector"]
+layout_mode = 2

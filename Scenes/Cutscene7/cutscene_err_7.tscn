@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=3 uid="uid://ceaji1c2413k7"]
+
+[ext_resource type="Script" path="res://Scenes/Cutscene7/cutscene_err_7.gd" id="1_76cla"]
+
+[sub_resource type="Curve3D" id="Curve3D_clbwa"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 6.59345, -0.485285, -6.78442, 0, 0, 0, 0, 0, 0, -0.242414, -0.98168, -5.30066),
+"tilts": PackedFloat32Array(0, 0)
+}
+point_count = 2
+
+[node name="CutsceneErr7" type="Node3D" node_paths=PackedStringArray("camera", "camera_path")]
+script = ExtResource("1_76cla")
+camera = NodePath("Path3D/PathFollow3D/CutsceneCamera")
+camera_path = NodePath("Path3D/PathFollow3D")
+
+[node name="Path3D" type="Path3D" parent="."]
+transform = Transform3D(0.93659, 0.0906191, 0.338507, -0.0589355, 0.99296, -0.102753, -0.345435, 0.0762876, 0.935337, 1.10936, 1.11108, 0.345704)
+curve = SubResource("Curve3D_clbwa")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="Path3D"]
+transform = Transform3D(-0.212112, -0.0691725, 0.974778, 7.45044e-09, 0.997454, 0.0707847, -0.977226, 0.0150142, -0.21158, 6.59345, -0.485285, -6.78442)
+loop = false
+
+[node name="CutsceneCamera" type="Camera3D" parent="Path3D/PathFollow3D"]
+unique_name_in_owner = true
+transform = Transform3D(0.845214, -0.19436, 0.497871, -0.0742683, 0.879821, 0.469549, -0.529277, -0.433827, 0.729172, 0.102063, 0.481605, 0.234626)

@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://ikba8qfunjsv"]
+
+[ext_resource type="Script" path="res://Scenes/UI/AnimatedBolt/AnimatedBolt.gd" id="1_mw4vd"]
+[ext_resource type="SpriteFrames" uid="uid://bncpcwos8yaqy" path="res://Assets/Other/AnimatedBolt.tres" id="2_2ed3p"]
+
+[node name="AnimatedBolt" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_mw4vd")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(101, 622)
+scale = Vector2(0.5, 0.5)
+sprite_frames = ExtResource("2_2ed3p")
+autoplay = "default"
+frame_progress = 0.654814

@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://bff0voc0d4lvi"]
+
+[ext_resource type="Script" path="res://Scenes/Other/podshipnik_normal_temp.gd" id="1_r4mmh"]
+[ext_resource type="PackedScene" uid="uid://cifekrmyimwik" path="res://Scenes/Other/VibrationDevice.tscn" id="2_dx7io"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_l26gt"]
+height = 0.0185526
+radius = 0.357895
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_x111o"]
+size = Vector3(0.0219727, 0.181015, 0.574219)
+
+[node name="MeshInstance3D" type="MeshInstance3D"]
+script = ExtResource("1_r4mmh")
+
+[node name="PodshipnikNormalTemp" type="StaticBody3D" parent="."]
+transform = Transform3D(1, -1.77636e-15, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PodshipnikNormalTemp"]
+transform = Transform3D(0.00794762, 0.999968, 3.14776e-05, -0.712682, 0.00564229, 0.701464, 0.701442, -0.00559737, 0.712704, 0.0524478, 0.00258741, -0.0025874)
+shape = SubResource("CylinderShape3D_l26gt")
+disabled = true
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="PodshipnikNormalTemp"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0500488, 0.266331, -0.00256348)
+shape = SubResource("BoxShape3D_x111o")
+
+[node name="VibrationDevice" parent="." instance=ExtResource("2_dx7io")]

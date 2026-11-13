@@ -1,0 +1,29 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://cl5g64arnpt8f"]
+
+[ext_resource type="Shader" uid="uid://b1osdgjd8lysj" path="res://Assets/Shaders/waterfall.gdshader" id="1_aji7c"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_76x64"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_a8s51"]
+noise = SubResource("FastNoiseLite_76x64")
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_q70ay"]
+noise_type = 3
+seed = 2
+fractal_type = 2
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_klpf2"]
+noise = SubResource("FastNoiseLite_q70ay")
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_aji7c")
+shader_parameter/noise_tex = SubResource("NoiseTexture2D_klpf2")
+shader_parameter/displ_tex = SubResource("NoiseTexture2D_a8s51")
+shader_parameter/top_light_color = Color(0.0196078, 0.0666667, 0.0627451, 1)
+shader_parameter/top_dark_color = Color(0.278431, 0.505882, 0.584314, 1)
+shader_parameter/bot_light_color = Color(0.0901961, 0.317647, 0.337255, 1)
+shader_parameter/bot_dark_color = Color(0.0823529, 0.219608, 0.164706, 1)
+shader_parameter/displ_amount = 0.02
+shader_parameter/bottom_foam_threshold = 0.48
+shader_parameter/speed = 1.8

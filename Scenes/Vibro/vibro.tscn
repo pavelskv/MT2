@@ -1,0 +1,46 @@
+[gd_scene load_steps=7 format=3 uid="uid://bp0pgndkrld6a"]
+
+[ext_resource type="PackedScene" uid="uid://bjpikfuyu3o5r" path="res://Assets/Models/Sensors/vibro/vibro.blend" id="1_ijbk1"]
+[ext_resource type="PackedScene" uid="uid://cna3dpc5kc5k5" path="res://Scenes/UI/sensor_zoom_overlay.tscn" id="2_bb1aq"]
+[ext_resource type="Script" path="res://Scenes/Vibro/vibro.gd" id="2_v247k"]
+[ext_resource type="FontFile" uid="uid://bdrhp02h6uk43" path="res://Assets/Fonts/digital-7 (mono).ttf" id="3_1ob00"]
+[ext_resource type="PackedScene" uid="uid://ikba8qfunjsv" path="res://Scenes/UI/AnimatedBolt/AnimatedBolt.tscn" id="5_ul00b"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ofrlc"]
+size = Vector3(0.0701904, 0.159058, 0.0326538)
+
+[node name="vibro" instance=ExtResource("1_ijbk1")]
+script = ExtResource("2_v247k")
+
+[node name="SensorZoomOverlay" parent="." index="0" node_paths=PackedStringArray("camera") instance=ExtResource("2_bb1aq")]
+camera = NodePath("../Camera3D")
+
+[node name="Camera3D" type="Camera3D" parent="." index="1"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.557692, 0.264343, 0.153771)
+cull_mask = 2
+fov = 9.0
+near = 0.06
+far = 0.7
+
+[node name="Value" type="Label3D" parent="." index="2"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.0453199, 0.27193, 0.152873)
+layers = 3
+pixel_size = 0.0001
+text = "0.0 mm/c"
+font = ExtResource("3_1ob00")
+font_size = 72
+
+[node name="Cube" parent="." index="3"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0)
+layers = 3
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Cube" index="0"]
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Cube/StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.153625, 0.264054, 0.0375035)
+shape = SubResource("BoxShape3D_ofrlc")
+
+[node name="AnimatedBolt" parent="." index="4" instance=ExtResource("5_ul00b")]
+visible = false

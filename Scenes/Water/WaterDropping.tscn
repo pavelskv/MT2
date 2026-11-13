@@ -1,0 +1,42 @@
+[gd_scene load_steps=6 format=3 uid="uid://bwtfr80sj0i1c"]
+
+[ext_resource type="AudioStream" uid="uid://cq4kbpq5e3t01" path="res://Assets/Sound/Water/water_drain.mp3" id="1_485ut"]
+[ext_resource type="Script" path="res://Scenes/Water/WaterDropping.gd" id="1_h3vay"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qh052"]
+albedo_color = Color(0.247059, 0.364706, 0.443137, 0)
+metallic = 0.68
+metallic_specular = 0.0
+roughness = 0.26
+rim = 0.06
+rim_tint = 0.87
+
+[sub_resource type="SphereMesh" id="SphereMesh_rupdx"]
+material = SubResource("StandardMaterial3D_qh052")
+radius = 0.007
+height = 0.04
+radial_segments = 16
+rings = 8
+
+[sub_resource type="Curve" id="Curve_4a42r"]
+max_value = 100.0
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.0522876, 63.3279), 0.0, 0.0, 0, 0, Vector2(0.0762527, 4.86509), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[node name="WaterDropping" type="CPUParticles3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08614, 0.82405, -4.24236)
+visible = false
+amount = 20
+mesh = SubResource("SphereMesh_rupdx")
+initial_velocity_max = 0.1
+damping_max = 8.0
+damping_curve = SubResource("Curve_4a42r")
+script = ExtResource("1_h3vay")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("1_485ut")
+volume_db = -3.0
+max_distance = 30.0
+
+[connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
+[connection signal="finished" from="AudioStreamPlayer3D" to="." method="_on_audio_stream_player_3d_finished"]

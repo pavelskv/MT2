@@ -1,0 +1,11 @@
+[gd_scene load_steps=4 format=3 uid="uid://bowe8xfd4ooun"]
+
+[ext_resource type="PackedScene" uid="uid://lvfsjqnr2oyv" path="res://Assets/WaterPlanes/WaterPlaneShaped.blend" id="1_27h2h"]
+[ext_resource type="Script" path="res://Scenes/Water/WaterPlaneShaped.gd" id="2_h8q03"]
+[ext_resource type="Material" uid="uid://dhuvihmmvhoex" path="res://Assets/Materials/water.tres" id="2_rgx6w"]
+
+[node name="WaterPlaneShaped" instance=ExtResource("1_27h2h")]
+script = ExtResource("2_h8q03")
+
+[node name="water_plane_shaped" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_rgx6w")

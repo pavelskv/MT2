@@ -1,0 +1,75 @@
+[gd_scene load_steps=9 format=3 uid="uid://bleqi3lxkukr8"]
+
+[ext_resource type="PackedScene" uid="uid://dboachqhoqtgu" path="res://Scenes/Vents/Base/Straight/vent_straight.tscn" id="1_18q0q"]
+[ext_resource type="Shader" path="res://Assets/Shaders/outline3D.gdshader" id="2_2pqdh"]
+[ext_resource type="Script" path="res://Scenes/Vents/Unique/vent_straight_broken.gd" id="2_sgk2x"]
+[ext_resource type="Texture2D" uid="uid://hsfllf0jjgtd" path="res://Assets/UI/repair.png" id="4_1fdcq"]
+[ext_resource type="AudioStream" uid="uid://dnbdcvb3xudhj" path="res://Assets/Sound/Vents/broken_vent.mp3" id="5_lr6o5"]
+[ext_resource type="AudioStream" uid="uid://cjid3s77kp5im" path="res://Assets/Sound/Voice/Manual/vent_broken_fixed.mp3" id="6_2y6d8"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_eab5c"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("2_2pqdh")
+shader_parameter/enable = false
+shader_parameter/outline_color = Color(0.623529, 1, 1, 1)
+shader_parameter/outline_width = 3.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fiwle"]
+resource_local_to_scene = true
+next_pass = SubResource("ShaderMaterial_eab5c")
+grow_amount = 0.002
+
+[node name="vent2_broken" instance=ExtResource("1_18q0q")]
+script = ExtResource("2_sgk2x")
+broken = false
+
+[node name="ventil_004" parent="." index="0"]
+transform = Transform3D(-1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, 0, 0, 0)
+material_overlay = SubResource("StandardMaterial3D_fiwle")
+
+[node name="RepairLogo" type="Sprite3D" parent="." index="3"]
+transform = Transform3D(-1.07534e-09, -0.031428, 0.038888, -1.37376e-09, 0.038888, 0.031428, -0.05, -3.92545e-10, -1.69985e-09, -4.65661e-10, 0.372083, -0.0386823)
+visible = false
+billboard = 1
+texture = ExtResource("4_1fdcq")
+
+[node name="BrokenSound" type="AudioStreamPlayer3D" parent="." index="4"]
+stream = ExtResource("5_lr6o5")
+volume_db = 3.0
+
+[node name="BrokenVentNotifyTimer" type="Timer" parent="." index="5"]
+wait_time = 5.0
+one_shot = true
+
+[node name="BrokenNotify" type="CanvasLayer" parent="BrokenVentNotifyTimer" index="0"]
+visible = false
+
+[node name="RingingLabel" type="RichTextLabel" parent="BrokenVentNotifyTimer/BrokenNotify" index="0"]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -239.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_outline_size = 3
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/normal_font_size = 25
+theme_override_font_sizes/bold_font_size = 25
+theme_override_font_sizes/italics_font_size = 25
+theme_override_font_sizes/bold_italics_font_size = 25
+theme_override_font_sizes/mono_font_size = 25
+bbcode_enabled = true
+text = "[center]Ревизия задвижки [color=green]закончена[/color]! Продолжайте испытания.[/center]"
+scroll_active = false
+autowrap_mode = 0
+shortcut_keys_enabled = false
+
+[node name="VentFixedConfirmationSound" type="AudioStreamPlayer" parent="BrokenVentNotifyTimer/BrokenNotify" index="1"]
+stream = ExtResource("6_2y6d8")
+
+[connection signal="timeout" from="BrokenVentNotifyTimer" to="." method="_on_broken_vent_notify_timer_timeout"]
+[connection signal="finished" from="BrokenVentNotifyTimer/BrokenNotify/VentFixedConfirmationSound" to="." method="_on_vent_fixed_confirmation_sound_finished"]

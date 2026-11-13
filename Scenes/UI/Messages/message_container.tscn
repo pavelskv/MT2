@@ -1,0 +1,26 @@
+[gd_scene load_steps=2 format=3 uid="uid://b80sx70akvn0h"]
+
+[ext_resource type="Script" path="res://Scenes/UI/Messages/message_container.gd" id="1_3ksg7"]
+
+[node name="MessageContainer" type="RichTextLabel"]
+visible = false
+offset_right = 960.0
+offset_bottom = 231.0
+theme_override_font_sizes/normal_font_size = 30
+theme_override_font_sizes/bold_font_size = 32
+theme_override_font_sizes/italics_font_size = 30
+theme_override_font_sizes/bold_italics_font_size = 30
+theme_override_font_sizes/mono_font_size = 30
+bbcode_enabled = true
+text = "Добро пожаловать на этот замечательный обучающий курс (тестовое сообщение-заглушка)"
+scroll_active = false
+tab_size = 0
+shortcut_keys_enabled = false
+meta_underlined = false
+hint_underlined = false
+script = ExtResource("1_3ksg7")
+
+[node name="MesssageAudio" type="AudioStreamPlayer" parent="."]
+
+[connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
+[connection signal="finished" from="MesssageAudio" to="." method="_on_messsage_audio_finished"]

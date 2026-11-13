@@ -1,0 +1,382 @@
+[gd_scene load_steps=14 format=3 uid="uid://dbut6wg76d326"]
+
+[ext_resource type="Script" path="res://Scenes/Switch2D/switch2d.gd" id="1_mekr6"]
+[ext_resource type="Texture2D" uid="uid://bugdnb6n3uf7b" path="res://Assets/Models/Switch2D/korob.png" id="1_pnxpq"]
+[ext_resource type="Shader" path="res://Assets/Shaders/highlight2D.gdshader" id="3_2ybu5"]
+[ext_resource type="Texture2D" uid="uid://d2m5446dphfdr" path="res://Assets/Other/Light.png" id="3_b2lnf"]
+[ext_resource type="PackedScene" uid="uid://cjq7wgewst7vo" path="res://Scenes/Switch2D/Knob/knob.tscn" id="4_luv10"]
+[ext_resource type="AudioStream" uid="uid://dh4aaqvs6rp0" path="res://Assets/Sound/Other/switch_lamp.mp3" id="6_igrnj"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_m4mhv"]
+resource_local_to_scene = true
+shader = ExtResource("3_2ybu5")
+shader_parameter/enable = false
+shader_parameter/color = Color(0.623529, 1, 1, 1)
+shader_parameter/width = 7.0
+shader_parameter/pattern = 2
+shader_parameter/inside = true
+shader_parameter/add_margins = false
+shader_parameter/number_of_images = Vector2(1, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_nq7cx"]
+resource_local_to_scene = true
+shader = ExtResource("3_2ybu5")
+shader_parameter/enable = false
+shader_parameter/color = Color(0.623529, 1, 1, 1)
+shader_parameter/width = 7.0
+shader_parameter/pattern = 2
+shader_parameter/inside = true
+shader_parameter/add_margins = false
+shader_parameter/number_of_images = Vector2(1, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jdf66"]
+resource_local_to_scene = true
+shader = ExtResource("3_2ybu5")
+shader_parameter/enable = false
+shader_parameter/color = Color(0.623529, 1, 1, 1)
+shader_parameter/width = 7.0
+shader_parameter/pattern = 2
+shader_parameter/inside = true
+shader_parameter/add_margins = false
+shader_parameter/number_of_images = Vector2(1, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_w1h54"]
+resource_local_to_scene = true
+shader = ExtResource("3_2ybu5")
+shader_parameter/enable = false
+shader_parameter/color = Color(0.623529, 1, 1, 1)
+shader_parameter/width = 7.0
+shader_parameter/pattern = 2
+shader_parameter/inside = true
+shader_parameter/add_margins = false
+shader_parameter/number_of_images = Vector2(1, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_kfvh4"]
+resource_local_to_scene = true
+shader = ExtResource("3_2ybu5")
+shader_parameter/enable = false
+shader_parameter/color = Color(0.623529, 1, 1, 1)
+shader_parameter/width = 7.0
+shader_parameter/pattern = 2
+shader_parameter/inside = true
+shader_parameter/add_margins = false
+shader_parameter/number_of_images = Vector2(1, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_oe4xu"]
+resource_local_to_scene = true
+shader = ExtResource("3_2ybu5")
+shader_parameter/enable = false
+shader_parameter/color = Color(0.623529, 1, 1, 1)
+shader_parameter/width = 7.0
+shader_parameter/pattern = 2
+shader_parameter/inside = true
+shader_parameter/add_margins = false
+shader_parameter/number_of_images = Vector2(1, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_sabpj"]
+resource_local_to_scene = true
+shader = ExtResource("3_2ybu5")
+shader_parameter/enable = false
+shader_parameter/color = Color(0.623529, 1, 1, 1)
+shader_parameter/width = 7.0
+shader_parameter/pattern = 2
+shader_parameter/inside = true
+shader_parameter/add_margins = false
+shader_parameter/number_of_images = Vector2(1, 1)
+
+[node name="Switch2D" type="CanvasLayer"]
+script = ExtResource("1_mekr6")
+
+[node name="Panel" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="TextureRect" parent="Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_pnxpq")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="TextEdit2" type="TextEdit" parent="Panel/Background"]
+layout_mode = 0
+offset_left = 840.0
+offset_top = 52.0
+offset_right = 967.0
+offset_bottom = 93.0
+text = "Защиты НА - 1"
+
+[node name="TextEdit" type="TextEdit" parent="Panel/Background"]
+layout_mode = 0
+offset_left = 206.0
+offset_top = 51.0
+offset_right = 586.0
+offset_bottom = 98.0
+text = "Блокировки разрешающие включение НА - 1"
+
+[node name="Lights" type="Control" parent="Panel"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Red1" type="TextureRect" parent="Panel/Lights"]
+modulate = Color(1, 1, 1, 0.529412)
+self_modulate = Color(0.692585, 0, 0.167583, 1)
+layout_mode = 0
+offset_left = 320.0
+offset_top = 254.0
+offset_right = 343.0
+offset_bottom = 276.0
+texture = ExtResource("3_b2lnf")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="Red2" type="TextureRect" parent="Panel/Lights"]
+modulate = Color(1, 1, 1, 0.529412)
+self_modulate = Color(0.692585, 0, 0.167583, 1)
+layout_mode = 0
+offset_left = 468.0
+offset_top = 254.0
+offset_right = 491.0
+offset_bottom = 276.0
+texture = ExtResource("3_b2lnf")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="Red3" type="TextureRect" parent="Panel/Lights"]
+modulate = Color(1, 1, 1, 0.529412)
+self_modulate = Color(0.692585, 0, 0.167583, 1)
+layout_mode = 0
+offset_left = 804.0
+offset_top = 113.0
+offset_right = 828.0
+offset_bottom = 136.0
+texture = ExtResource("3_b2lnf")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="Red4" type="TextureRect" parent="Panel/Lights"]
+modulate = Color(1, 1, 1, 0.529412)
+self_modulate = Color(0.692585, 0, 0.167583, 1)
+layout_mode = 0
+offset_left = 983.0
+offset_top = 113.0
+offset_right = 1006.0
+offset_bottom = 136.0
+texture = ExtResource("3_b2lnf")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="Red5" type="TextureRect" parent="Panel/Lights"]
+modulate = Color(1, 1, 1, 0.529412)
+self_modulate = Color(0.692585, 0, 0.167583, 1)
+layout_mode = 0
+offset_left = 771.0
+offset_top = 407.0
+offset_right = 794.0
+offset_bottom = 429.0
+texture = ExtResource("3_b2lnf")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="Red6" type="TextureRect" parent="Panel/Lights"]
+modulate = Color(1, 1, 1, 0.529412)
+self_modulate = Color(0.692585, 0, 0.167583, 1)
+layout_mode = 0
+offset_left = 892.0
+offset_top = 407.0
+offset_right = 915.0
+offset_bottom = 429.0
+texture = ExtResource("3_b2lnf")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="Red7" type="TextureRect" parent="Panel/Lights"]
+modulate = Color(1, 1, 1, 0.529412)
+self_modulate = Color(0.692585, 0, 0.167583, 1)
+layout_mode = 0
+offset_left = 1022.0
+offset_top = 407.0
+offset_right = 1045.0
+offset_bottom = 429.0
+texture = ExtResource("3_b2lnf")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="Green1" type="TextureRect" parent="Panel/Lights"]
+visible = false
+modulate = Color(1, 1, 1, 0.529412)
+self_modulate = Color(0.692585, 0, 0.167583, 1)
+layout_mode = 0
+offset_left = 320.0
+offset_top = 295.0
+offset_right = 343.0
+offset_bottom = 317.0
+texture = ExtResource("3_b2lnf")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="Green2" type="TextureRect" parent="Panel/Lights"]
+visible = false
+modulate = Color(1, 1, 1, 0.529412)
+self_modulate = Color(0.692585, 0, 0.167583, 1)
+layout_mode = 0
+offset_left = 467.0
+offset_top = 295.0
+offset_right = 490.0
+offset_bottom = 317.0
+texture = ExtResource("3_b2lnf")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="Green3" type="TextureRect" parent="Panel/Lights"]
+visible = false
+modulate = Color(1, 1, 1, 0.529412)
+self_modulate = Color(0.692585, 0, 0.167583, 1)
+layout_mode = 0
+offset_left = 804.0
+offset_top = 153.0
+offset_right = 828.0
+offset_bottom = 176.0
+texture = ExtResource("3_b2lnf")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="Green4" type="TextureRect" parent="Panel/Lights"]
+visible = false
+modulate = Color(1, 1, 1, 0.529412)
+self_modulate = Color(0.692585, 0, 0.167583, 1)
+layout_mode = 0
+offset_left = 982.0
+offset_top = 154.0
+offset_right = 1007.0
+offset_bottom = 177.0
+texture = ExtResource("3_b2lnf")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="Green5" type="TextureRect" parent="Panel/Lights"]
+visible = false
+modulate = Color(1, 1, 1, 0.529412)
+self_modulate = Color(0.692585, 0, 0.167583, 1)
+layout_mode = 0
+offset_left = 770.0
+offset_top = 447.0
+offset_right = 794.0
+offset_bottom = 470.0
+texture = ExtResource("3_b2lnf")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="Green6" type="TextureRect" parent="Panel/Lights"]
+visible = false
+modulate = Color(1, 1, 1, 0.529412)
+self_modulate = Color(0.692585, 0, 0.167583, 1)
+layout_mode = 0
+offset_left = 891.0
+offset_top = 447.0
+offset_right = 915.0
+offset_bottom = 470.0
+texture = ExtResource("3_b2lnf")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="Green7" type="TextureRect" parent="Panel/Lights"]
+visible = false
+modulate = Color(1, 1, 1, 0.529412)
+self_modulate = Color(0.692585, 0, 0.167583, 1)
+layout_mode = 0
+offset_left = 1022.0
+offset_top = 447.0
+offset_right = 1046.0
+offset_bottom = 470.0
+texture = ExtResource("3_b2lnf")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="Knobs" type="Control" parent="Panel"]
+unique_name_in_owner = true
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Knob1" parent="Panel/Knobs" instance=ExtResource("4_luv10")]
+material = SubResource("ShaderMaterial_m4mhv")
+layout_mode = 0
+offset_left = 312.0
+offset_top = 418.0
+offset_right = 352.0
+offset_bottom = 458.0
+
+[node name="Knob2" parent="Panel/Knobs" instance=ExtResource("4_luv10")]
+material = SubResource("ShaderMaterial_nq7cx")
+layout_mode = 0
+offset_left = 460.0
+offset_top = 418.0
+offset_right = 500.0
+offset_bottom = 458.0
+
+[node name="Knob3" parent="Panel/Knobs" instance=ExtResource("4_luv10")]
+material = SubResource("ShaderMaterial_jdf66")
+layout_mode = 0
+offset_left = 796.0
+offset_top = 290.0
+offset_right = 836.0
+offset_bottom = 330.0
+
+[node name="Knob4" parent="Panel/Knobs" instance=ExtResource("4_luv10")]
+material = SubResource("ShaderMaterial_w1h54")
+layout_mode = 0
+offset_left = 976.0
+offset_top = 290.0
+offset_right = 1016.0
+offset_bottom = 330.0
+
+[node name="Knob5" parent="Panel/Knobs" instance=ExtResource("4_luv10")]
+material = SubResource("ShaderMaterial_kfvh4")
+layout_mode = 0
+offset_left = 764.0
+offset_top = 579.0
+offset_right = 804.0
+offset_bottom = 619.0
+
+[node name="Knob6" parent="Panel/Knobs" instance=ExtResource("4_luv10")]
+material = SubResource("ShaderMaterial_oe4xu")
+layout_mode = 0
+offset_left = 884.0
+offset_top = 579.0
+offset_right = 924.0
+offset_bottom = 619.0
+
+[node name="Knob7" parent="Panel/Knobs" instance=ExtResource("4_luv10")]
+material = SubResource("ShaderMaterial_sabpj")
+layout_mode = 0
+offset_left = 1014.0
+offset_top = 580.0
+offset_right = 1054.0
+offset_bottom = 620.0
+
+[node name="SwitchLamp" type="AudioStreamPlayer" parent="Panel"]
+stream = ExtResource("6_igrnj")
+volume_db = -7.0
+
+[node name="TaskFinished" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[connection signal="state_changed" from="Panel/Knobs/Knob1" to="." method="_on_knob_1_state_changed"]
+[connection signal="state_changed" from="Panel/Knobs/Knob2" to="." method="_on_knob_2_state_changed"]
+[connection signal="state_changed" from="Panel/Knobs/Knob3" to="." method="_on_knob_3_state_changed"]
+[connection signal="state_changed" from="Panel/Knobs/Knob4" to="." method="_on_knob_4_state_changed"]
+[connection signal="state_changed" from="Panel/Knobs/Knob5" to="." method="_on_knob_5_state_changed"]
+[connection signal="state_changed" from="Panel/Knobs/Knob6" to="." method="_on_knob_6_state_changed"]
+[connection signal="state_changed" from="Panel/Knobs/Knob7" to="." method="_on_knob_7_state_changed"]
+[connection signal="timeout" from="TaskFinished" to="." method="_on_task_finished_timeout"]

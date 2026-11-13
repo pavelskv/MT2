@@ -1,0 +1,115 @@
+[gd_scene load_steps=4 format=3 uid="uid://g6kk7xr353w0"]
+
+[ext_resource type="Script" path="res://addons/rb_voice_generator/editor/window_dialogs/manual/rbvg_manual.gd" id="1_wk6xy"]
+[ext_resource type="PackedScene" uid="uid://8mej2y2s5eyq" path="res://addons/rb_voice_generator/editor/window_dialogs/_components/manual_voice_selector.tscn" id="2_n38ys"]
+[ext_resource type="Texture2D" uid="uid://b474mdxmjhniw" path="res://addons/rb_voice_generator/editor/ui/Play.svg" id="3_g27ur"]
+
+[node name="Manual" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_wk6xy")
+
+[node name="MainContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SettingsPanel" type="Panel" parent="MainContainer"]
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MainContainer/SettingsPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ManualVoiceSelector" parent="MainContainer/SettingsPanel/VBoxContainer" instance=ExtResource("2_n38ys")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="TextToVoiceEdit" type="TextEdit" parent="MainContainer/SettingsPanel/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+placeholder_text = "Текст для озвучки выбранным голосом"
+context_menu_enabled = false
+wrap_mode = 1
+
+[node name="ExecPanel" type="Panel" parent="MainContainer"]
+custom_minimum_size = Vector2(0, 220)
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="MainContainer/ExecPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 8
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MainContainer/ExecPanel/MarginContainer"]
+layout_mode = 2
+
+[node name="LogRichTextLabel" type="RichTextLabel" parent="MainContainer/ExecPanel/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+clip_contents = false
+layout_mode = 2
+size_flags_vertical = 3
+bbcode_enabled = true
+scroll_following = true
+
+[node name="StartButton" type="Button" parent="MainContainer/ExecPanel/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+size_flags_vertical = 8
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MainContainer/ExecPanel/MarginContainer/VBoxContainer/StartButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -113.0
+offset_top = -11.5
+offset_right = 113.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="MainContainer/ExecPanel/MarginContainer/VBoxContainer/StartButton/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("3_g27ur")
+expand_mode = 2
+
+[node name="Label" type="Label" parent="MainContainer/ExecPanel/MarginContainer/VBoxContainer/StartButton/HBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 1
+text = "Создать файл озвучки"
+
+[node name="SaveFileDialog" type="FileDialog" parent="MainContainer"]
+unique_name_in_owner = true
+title = "Сохранить"
+initial_position = 2
+size = Vector2i(500, 400)
+filters = PackedStringArray("*.mp3 ; MP3")
+
+[connection signal="pressed" from="MainContainer/ExecPanel/MarginContainer/VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="file_selected" from="MainContainer/SaveFileDialog" to="." method="_on_save_file_dialog_file_selected"]

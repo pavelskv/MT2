@@ -1,0 +1,66 @@
+[gd_scene load_steps=3 format=3 uid="uid://buepcienxeeql"]
+
+[ext_resource type="Script" path="res://Scenes/Autoloads/LossScreen/loss_screen.gd" id="1_lk6sf"]
+[ext_resource type="AudioStream" uid="uid://w4mh6ecaypg6" path="res://Assets/Sound/Other/lose_sound.mp3" id="2_rmei1"]
+
+[node name="LossScreenContainer" type="CanvasLayer"]
+script = ExtResource("1_lk6sf")
+
+[node name="LossScreen" type="ColorRect" parent="."]
+unique_name_in_owner = true
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0784314, 0.0784314, 0.0784314, 1)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="LossScreen"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -171.0
+offset_bottom = 140.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/normal_font_size = 56
+theme_override_font_sizes/bold_font_size = 56
+theme_override_font_sizes/italics_font_size = 56
+theme_override_font_sizes/bold_italics_font_size = 56
+theme_override_font_sizes/mono_font_size = 56
+bbcode_enabled = true
+text = "[center]
+Увы...
+Тест [color=red]провален[/color]!
+[/center]"
+scroll_active = false
+shortcut_keys_enabled = false
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="LossScreen"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -194.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/normal_font_size = 28
+theme_override_font_sizes/bold_font_size = 28
+theme_override_font_sizes/italics_font_size = 28
+theme_override_font_sizes/bold_italics_font_size = 28
+theme_override_font_sizes/mono_font_size = 28
+bbcode_enabled = true
+text = "[center][i](нажмите [color=yellow]любую клавишу[/color] для перезапуска)"
+scroll_active = false
+shortcut_keys_enabled = false
+
+[node name="Sound" type="AudioStreamPlayer" parent="LossScreen"]
+unique_name_in_owner = true
+stream = ExtResource("2_rmei1")
+volume_db = -2.0
+
+[connection signal="finished" from="LossScreen/Sound" to="." method="_on_sound_finished"]

@@ -1,0 +1,146 @@
+[gd_scene load_steps=6 format=3 uid="uid://degjf12fllvbu"]
+
+[ext_resource type="Script" path="res://addons/rb_voice_generator/editor/window_dialogs/auto/rbvg_auto.gd" id="1_d5ll1"]
+[ext_resource type="Texture2D" uid="uid://b474mdxmjhniw" path="res://addons/rb_voice_generator/editor/ui/Play.svg" id="2_m00he"]
+
+[sub_resource type="Image" id="Image_nel8g"]
+data = {
+"data": PackedByteArray(255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 3, 224, 224, 224, 105, 224, 224, 224, 192, 224, 224, 224, 244, 224, 224, 224, 238, 224, 224, 224, 197, 224, 224, 224, 105, 255, 255, 255, 4, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 233, 233, 233, 23, 225, 225, 225, 207, 224, 224, 224, 255, 224, 224, 224, 255, 224, 224, 224, 255, 224, 224, 224, 255, 224, 224, 224, 255, 224, 224, 224, 255, 224, 224, 224, 198, 226, 226, 226, 26, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 6, 224, 224, 224, 205, 224, 224, 224, 255, 224, 224, 224, 218, 225, 225, 225, 83, 237, 237, 237, 14, 237, 237, 237, 14, 224, 224, 224, 82, 224, 224, 224, 220, 224, 224, 224, 255, 224, 224, 224, 197, 255, 255, 255, 4, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 225, 225, 225, 102, 224, 224, 224, 255, 224, 224, 224, 218, 227, 227, 227, 18, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 224, 224, 224, 16, 224, 224, 224, 221, 224, 224, 224, 255, 225, 225, 225, 101, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 224, 224, 224, 198, 224, 224, 224, 255, 225, 225, 225, 84, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 226, 226, 226, 86, 224, 224, 224, 255, 224, 224, 224, 194, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 1, 255, 255, 255, 4, 224, 224, 224, 238, 224, 224, 224, 255, 227, 227, 227, 18, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 229, 229, 229, 19, 224, 224, 224, 255, 224, 224, 224, 233, 255, 255, 255, 0, 255, 255, 255, 0, 224, 224, 224, 160, 224, 224, 224, 255, 224, 224, 224, 255, 224, 224, 224, 255, 224, 224, 224, 255, 225, 225, 225, 159, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 230, 230, 230, 20, 224, 224, 224, 255, 224, 224, 224, 237, 255, 255, 255, 0, 255, 255, 255, 0, 230, 230, 230, 10, 224, 224, 224, 213, 224, 224, 224, 255, 224, 224, 224, 255, 224, 224, 224, 212, 230, 230, 230, 10, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 224, 224, 224, 90, 224, 224, 224, 255, 224, 224, 224, 185, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 225, 225, 225, 42, 224, 224, 224, 245, 224, 224, 224, 245, 225, 225, 225, 42, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 232, 232, 232, 22, 224, 224, 224, 224, 224, 224, 224, 255, 224, 224, 224, 98, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 224, 224, 224, 96, 226, 226, 226, 95, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 230, 230, 230, 20, 224, 224, 224, 88, 224, 224, 224, 221, 224, 224, 224, 255, 225, 225, 225, 199, 255, 255, 255, 2, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 224, 224, 224, 255, 224, 224, 224, 255, 224, 224, 224, 255, 224, 224, 224, 200, 227, 227, 227, 18, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 224, 224, 224, 236, 224, 224, 224, 195, 224, 224, 224, 96, 255, 255, 255, 5, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0),
+"format": "RGBA8",
+"height": 16,
+"mipmaps": false,
+"width": 16
+}
+
+[sub_resource type="ImageTexture" id="ImageTexture_bdx28"]
+image = SubResource("Image_nel8g")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lvetl"]
+bg_color = Color(0.106243, 0.437169, 0.482945, 1)
+
+[node name="Auto" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_d5ll1")
+
+[node name="MainContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VoiceOptionsPanel" type="Panel" parent="MainContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MainContainer/VoiceOptionsPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="NameVoiceContainer" type="VBoxContainer" parent="MainContainer/VoiceOptionsPanel/ScrollContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="MainContainer/VoiceOptionsPanel/ScrollContainer/NameVoiceContainer"]
+layout_mode = 2
+theme_override_constants/margin_top = 7
+theme_override_constants/margin_right = 7
+theme_override_constants/margin_bottom = 7
+
+[node name="UpdateVoicesListButton" type="Button" parent="MainContainer/VoiceOptionsPanel/ScrollContainer/NameVoiceContainer/MarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 8
+text = "Обновить список "
+icon = SubResource("ImageTexture_bdx28")
+
+[node name="NoVoicesoundLabel" type="Label" parent="MainContainer/VoiceOptionsPanel/ScrollContainer/NameVoiceContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 20
+text = "ГОЛОСА ДЛЯ ОЗВУЧКИ НЕ НАЙДЕНЫ"
+vertical_alignment = 1
+
+[node name="ExecPanel" type="Panel" parent="MainContainer"]
+custom_minimum_size = Vector2(0, 350)
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="MainContainer/ExecPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MainContainer/ExecPanel/MarginContainer"]
+layout_mode = 2
+
+[node name="LogRichTextLabel" type="RichTextLabel" parent="MainContainer/ExecPanel/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+clip_contents = false
+layout_mode = 2
+size_flags_vertical = 3
+bbcode_enabled = true
+scroll_following = true
+
+[node name="MarginContainer" type="MarginContainer" parent="MainContainer/ExecPanel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_bottom = 3
+
+[node name="ProgressBar" type="ProgressBar" parent="MainContainer/ExecPanel/MarginContainer/VBoxContainer/MarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_styles/fill = SubResource("StyleBoxFlat_lvetl")
+
+[node name="StartButton" type="Button" parent="MainContainer/ExecPanel/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MainContainer/ExecPanel/MarginContainer/VBoxContainer/StartButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -154.5
+offset_top = -11.5
+offset_right = 154.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="MainContainer/ExecPanel/MarginContainer/VBoxContainer/StartButton/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("2_m00he")
+expand_mode = 2
+
+[node name="Label" type="Label" parent="MainContainer/ExecPanel/MarginContainer/VBoxContainer/StartButton/HBoxContainer"]
+layout_mode = 2
+text = "Запустить автогенерацию озвучки "
+
+[connection signal="pressed" from="MainContainer/VoiceOptionsPanel/ScrollContainer/NameVoiceContainer/MarginContainer/UpdateVoicesListButton" to="." method="_on_update_voices_list_button_pressed"]
+[connection signal="pressed" from="MainContainer/ExecPanel/MarginContainer/VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]

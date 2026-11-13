@@ -1,0 +1,13 @@
+[gd_scene load_steps=4 format=3 uid="uid://btlvtm0u0kyii"]
+
+[ext_resource type="PackedScene" uid="uid://dbmlpxg1dq10v" path="res://Assets/Models/Rooms/motor/setka.blend" id="1_qfmlb"]
+[ext_resource type="Texture2D" uid="uid://cvy3nmkfkwq7" path="res://Assets/Models/Rooms/motor/osn_setka1.png" id="2_viror"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_r0y86"]
+albedo_texture = ExtResource("2_viror")
+
+[node name="setka" instance=ExtResource("1_qfmlb")]
+
+[node name="Плоскость_003" parent="." index="0"]
+transform = Transform3D(0.0578839, 0, 0, 0, 0.0578839, 0, 0, 0, 0.0578839, 0, 0.0883877, 0)
+surface_material_override/0 = SubResource("StandardMaterial3D_r0y86")

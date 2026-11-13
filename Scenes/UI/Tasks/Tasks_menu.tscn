@@ -1,0 +1,371 @@
+[gd_scene load_steps=8 format=3 uid="uid://d04r8qquxsw67"]
+
+[ext_resource type="StyleBox" uid="uid://bnk0jfjrg8vlo" path="res://Scenes/UI/StartMenu/button_style_box_flat.tres" id="1_k710a"]
+[ext_resource type="Script" path="res://Scenes/UI/Tasks/Tasks_menu.gd" id="1_tln6d"]
+[ext_resource type="FontFile" uid="uid://cjyrxmb4gujue" path="res://Assets/Fonts/BAHNSCHRIFT.TTF" id="2_n18ky"]
+[ext_resource type="FontVariation" uid="uid://dighmt70mnp3g" path="res://Assets/Fonts/semibold_font_variation.tres" id="3_duclu"]
+[ext_resource type="FontVariation" uid="uid://drfiep1yn45dh" path="res://Assets/Fonts/bold_font_variation.tres" id="4_eo4c2"]
+[ext_resource type="StyleBox" uid="uid://2mkehrn0d3u0" path="res://Scenes/UI/Tasks/Tasks_menu_checkbutton_style.tres" id="6_fjowx"]
+
+[sub_resource type="ButtonGroup" id="ButtonGroup_30khy"]
+allow_unpress = true
+
+[node name="Tasks_menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_tln6d")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 60
+theme_override_constants/margin_top = 45
+theme_override_constants/margin_right = 60
+theme_override_constants/margin_bottom = 30
+
+[node name="Panel" type="Panel" parent="MarginContainer"]
+layout_mode = 2
+theme_override_styles/panel = ExtResource("1_k710a")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainerPanelPic" type="MarginContainer" parent="MarginContainer/Panel/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 70
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 70
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/Panel/VBoxContainer/MarginContainerPanelPic"]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="PanelLabelTasks" type="Label" parent="MarginContainer/Panel/VBoxContainer/MarginContainerPanelPic/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_eo4c2")
+theme_override_font_sizes/font_size = 50
+text = "ЗАДАЧИ"
+horizontal_alignment = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer/Panel/VBoxContainer/MarginContainerPanelPic/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/default_color = Color(0.168627, 0.0823529, 0.0862745, 1)
+theme_override_fonts/normal_font = ExtResource("2_n18ky")
+theme_override_fonts/bold_font = ExtResource("3_duclu")
+theme_override_font_sizes/normal_font_size = 22
+theme_override_font_sizes/bold_font_size = 26
+theme_override_font_sizes/italics_font_size = 23
+theme_override_font_sizes/bold_italics_font_size = 23
+theme_override_font_sizes/mono_font_size = 23
+bbcode_enabled = true
+text = "1. Успешно провести испытания насоса системы «чистого» конденсата.
+
+2. Познакомиться с опытом ПНР в системе
+
+[b]На данный момент реализованы следующие сценарии из опыта ПНР: [/b]"
+fit_content = true
+scroll_active = false
+autowrap_mode = 2
+shortcut_keys_enabled = false
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/Panel/VBoxContainer/MarginContainerPanelPic/VBoxContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/Panel/VBoxContainer/MarginContainerPanelPic/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
+theme_override_constants/separation = 6
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="MarginContainer/Panel/VBoxContainer/MarginContainerPanelPic/VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+tooltip_text = "Фланец на всасе насоса №2 не уплотнен"
+theme_override_colors/default_color = Color(0.168627, 0.0823529, 0.0862745, 1)
+theme_override_fonts/normal_font = ExtResource("2_n18ky")
+theme_override_fonts/bold_font = ExtResource("3_duclu")
+theme_override_font_sizes/normal_font_size = 22
+theme_override_font_sizes/bold_font_size = 28
+theme_override_font_sizes/italics_font_size = 23
+theme_override_font_sizes/bold_italics_font_size = 23
+theme_override_font_sizes/mono_font_size = 23
+bbcode_enabled = true
+text = "1. Затопление текущего помещения"
+fit_content = true
+scroll_active = false
+autowrap_mode = 2
+shortcut_keys_enabled = false
+
+[node name="RichTextLabel3" type="RichTextLabel" parent="MarginContainer/Panel/VBoxContainer/MarginContainerPanelPic/VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+tooltip_text = "Не закрыта одна из трех арматур во всасывающий коллектор от других систем"
+theme_override_colors/default_color = Color(0.168627, 0.0823529, 0.0862745, 1)
+theme_override_fonts/normal_font = ExtResource("2_n18ky")
+theme_override_fonts/bold_font = ExtResource("3_duclu")
+theme_override_font_sizes/normal_font_size = 22
+theme_override_font_sizes/bold_font_size = 28
+theme_override_font_sizes/italics_font_size = 23
+theme_override_font_sizes/bold_italics_font_size = 23
+theme_override_font_sizes/mono_font_size = 23
+bbcode_enabled = true
+text = "2. Затопление смежного помещения"
+fit_content = true
+scroll_active = false
+autowrap_mode = 2
+shortcut_keys_enabled = false
+
+[node name="RichTextLabel4" type="RichTextLabel" parent="MarginContainer/Panel/VBoxContainer/MarginContainerPanelPic/VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+tooltip_text = "Недостаточное заполнения корпуса насоса средой"
+theme_override_colors/default_color = Color(0.168627, 0.0823529, 0.0862745, 1)
+theme_override_fonts/normal_font = ExtResource("2_n18ky")
+theme_override_fonts/bold_font = ExtResource("3_duclu")
+theme_override_font_sizes/normal_font_size = 22
+theme_override_font_sizes/bold_font_size = 28
+theme_override_font_sizes/italics_font_size = 23
+theme_override_font_sizes/bold_italics_font_size = 23
+theme_override_font_sizes/mono_font_size = 23
+bbcode_enabled = true
+text = "3. Повышенный шум, вибрация, насос не развивает давление"
+fit_content = true
+scroll_active = false
+autowrap_mode = 2
+shortcut_keys_enabled = false
+
+[node name="RichTextLabel5" type="RichTextLabel" parent="MarginContainer/Panel/VBoxContainer/MarginContainerPanelPic/VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+tooltip_text = "Требуется ревизия"
+theme_override_colors/default_color = Color(0.168627, 0.0823529, 0.0862745, 1)
+theme_override_fonts/normal_font = ExtResource("2_n18ky")
+theme_override_fonts/bold_font = ExtResource("3_duclu")
+theme_override_font_sizes/normal_font_size = 22
+theme_override_font_sizes/bold_font_size = 28
+theme_override_font_sizes/italics_font_size = 23
+theme_override_font_sizes/bold_italics_font_size = 23
+theme_override_font_sizes/mono_font_size = 23
+bbcode_enabled = true
+text = "4. НА работает больше 1 минуты с расходом 0,0"
+fit_content = true
+scroll_active = false
+autowrap_mode = 2
+shortcut_keys_enabled = false
+
+[node name="RichTextLabel2" type="Label" parent="MarginContainer/Panel/VBoxContainer/MarginContainerPanelPic/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 10
+size_flags_vertical = 1
+tooltip_text = "Фланец на всасе насоса №2 не уплотнен"
+theme_override_colors/font_color = Color(0.168627, 0.0823529, 0.0862745, 1)
+theme_override_fonts/font = ExtResource("2_n18ky")
+text = "Неправильное действие инженера наладочной организации"
+horizontal_alignment = 2
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="CheckButtonErrBroken" type="CheckButton" parent="MarginContainer/Panel/VBoxContainer/MarginContainerPanelPic/VBoxContainer" groups=["debug_radiobuttons"]]
+process_mode = 3
+layout_mode = 2
+tooltip_text = "Требуется ревизия"
+focus_mode = 0
+theme_override_colors/font_color = Color(0.168627, 0.0823529, 0.0862745, 1)
+theme_override_colors/font_pressed_color = Color(0.317647, 0.176471, 0.184314, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0.376471, 0.376471, 0.376471, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_n18ky")
+theme_override_font_sizes/font_size = 22
+theme_override_styles/normal = ExtResource("6_fjowx")
+theme_override_styles/pressed = ExtResource("6_fjowx")
+theme_override_styles/hover = ExtResource("6_fjowx")
+theme_override_styles/hover_pressed = ExtResource("6_fjowx")
+button_group = SubResource("ButtonGroup_30khy")
+shortcut_feedback = false
+shortcut_in_tooltip = false
+text = "5. Не закрывается арматура на всасе насоса 2"
+
+[node name="CheckButtonErr6" type="CheckButton" parent="MarginContainer/Panel/VBoxContainer/MarginContainerPanelPic/VBoxContainer" groups=["debug_radiobuttons"]]
+process_mode = 3
+layout_mode = 2
+tooltip_text = "Ослабление крепежа"
+focus_mode = 0
+theme_override_colors/font_color = Color(0.168627, 0.0823529, 0.0862745, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0.376471, 0.376471, 0.376471, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_n18ky")
+theme_override_font_sizes/font_size = 22
+theme_override_styles/normal = ExtResource("6_fjowx")
+theme_override_styles/pressed = ExtResource("6_fjowx")
+theme_override_styles/hover = ExtResource("6_fjowx")
+theme_override_styles/hover_pressed = ExtResource("6_fjowx")
+button_group = SubResource("ButtonGroup_30khy")
+shortcut_feedback = false
+shortcut_in_tooltip = false
+text = "6. Повышенная вибрация ЭД "
+
+[node name="CheckButtonErr7" type="CheckButton" parent="MarginContainer/Panel/VBoxContainer/MarginContainerPanelPic/VBoxContainer" groups=["debug_radiobuttons"]]
+process_mode = 3
+layout_mode = 2
+tooltip_text = "Загрязнение сетки на всасе"
+focus_mode = 0
+theme_override_colors/font_color = Color(0.168627, 0.0823529, 0.0862745, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0.376471, 0.376471, 0.376471, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_n18ky")
+theme_override_font_sizes/font_size = 22
+theme_override_styles/normal = ExtResource("6_fjowx")
+theme_override_styles/pressed = ExtResource("6_fjowx")
+theme_override_styles/hover = ExtResource("6_fjowx")
+theme_override_styles/hover_pressed = ExtResource("6_fjowx")
+button_group = SubResource("ButtonGroup_30khy")
+shortcut_feedback = false
+shortcut_in_tooltip = false
+text = "7. Снижение давления на всасе, кавитация "
+
+[node name="CheckButtonErr8" type="CheckButton" parent="MarginContainer/Panel/VBoxContainer/MarginContainerPanelPic/VBoxContainer" groups=["debug_radiobuttons"]]
+process_mode = 3
+layout_mode = 2
+tooltip_text = "Не управляется - Требуется ревизия"
+focus_mode = 0
+theme_override_colors/font_color = Color(0.168627, 0.0823529, 0.0862745, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0.376471, 0.376471, 0.376471, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_n18ky")
+theme_override_font_sizes/font_size = 22
+theme_override_styles/normal = ExtResource("6_fjowx")
+theme_override_styles/pressed = ExtResource("6_fjowx")
+theme_override_styles/hover = ExtResource("6_fjowx")
+theme_override_styles/hover_pressed = ExtResource("6_fjowx")
+button_group = SubResource("ButtonGroup_30khy")
+shortcut_feedback = false
+shortcut_in_tooltip = false
+text = "8. Выход из строя задвижки на линии рециркуляции."
+
+[node name="CheckButtonErr9" type="CheckButton" parent="MarginContainer/Panel/VBoxContainer/MarginContainerPanelPic/VBoxContainer" groups=["debug_radiobuttons"]]
+process_mode = 3
+layout_mode = 2
+tooltip_text = "Требуется ревизия"
+focus_mode = 0
+theme_override_colors/font_color = Color(0.168627, 0.0823529, 0.0862745, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0.376471, 0.376471, 0.376471, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_n18ky")
+theme_override_font_sizes/font_size = 22
+theme_override_styles/normal = ExtResource("6_fjowx")
+theme_override_styles/pressed = ExtResource("6_fjowx")
+theme_override_styles/hover = ExtResource("6_fjowx")
+theme_override_styles/hover_pressed = ExtResource("6_fjowx")
+button_group = SubResource("ButtonGroup_30khy")
+shortcut_feedback = false
+shortcut_in_tooltip = false
+text = "9. Повышенный нагрев подшипника"
+
+[node name="CheckButtonErr10" type="CheckButton" parent="MarginContainer/Panel/VBoxContainer/MarginContainerPanelPic/VBoxContainer" groups=["debug_radiobuttons"]]
+process_mode = 3
+layout_mode = 2
+tooltip_text = "Требуется ревизия"
+focus_mode = 0
+theme_override_colors/font_color = Color(0.168627, 0.0823529, 0.0862745, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0.376471, 0.376471, 0.376471, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/h_separation = 10
+theme_override_fonts/font = ExtResource("2_n18ky")
+theme_override_font_sizes/font_size = 22
+theme_override_styles/normal = ExtResource("6_fjowx")
+theme_override_styles/pressed = ExtResource("6_fjowx")
+theme_override_styles/hover = ExtResource("6_fjowx")
+theme_override_styles/hover_pressed = ExtResource("6_fjowx")
+button_group = SubResource("ButtonGroup_30khy")
+shortcut_feedback = false
+shortcut_in_tooltip = false
+text = "10. Повышенный объем протечки по уплотнению вала насоса
+"
+
+[node name="MarginContainerPanelFooter" type="MarginContainer" parent="MarginContainer/Panel/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 70
+theme_override_constants/margin_right = 70
+theme_override_constants/margin_bottom = 20
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/Panel/VBoxContainer/MarginContainerPanelFooter"]
+layout_mode = 2
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="MarginContainer/Panel/VBoxContainer/MarginContainerPanelFooter/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+theme_override_colors/default_color = Color(0.168627, 0.0823529, 0.0862745, 1)
+theme_override_fonts/normal_font = ExtResource("2_n18ky")
+theme_override_fonts/bold_font = ExtResource("3_duclu")
+theme_override_font_sizes/normal_font_size = 17
+theme_override_font_sizes/bold_font_size = 28
+theme_override_font_sizes/italics_font_size = 23
+theme_override_font_sizes/bold_italics_font_size = 23
+theme_override_font_sizes/mono_font_size = 23
+bbcode_enabled = true
+text = "Вы можете выбрать “проиграть” один из сценариев, который не зависит от действий инженера наладочной организации, выбрав соответствующий чекбокс. 
+
+Более подробное описание сценариев из опыта ПНР приведено по [url=https://sdo.smolate.ru/kbase/resource/view/uid/bde6e32361fe60877683a8eaa9316464]ссылке[/url].
+"
+fit_content = true
+scroll_active = false
+autowrap_mode = 2
+shortcut_keys_enabled = false
+
+[node name="ContinueButton" type="Button" parent="MarginContainer/Panel/VBoxContainer/MarginContainerPanelFooter/HBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0.317647, 0.176471, 0.184314, 1)
+theme_override_colors/font_hover_color = Color(0.371731, 0.175429, 0.14903, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0.621524, 0.621524, 0.621524, 1)
+theme_override_fonts/font = ExtResource("4_eo4c2")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = ExtResource("1_k710a")
+theme_override_styles/hover = ExtResource("1_k710a")
+theme_override_styles/pressed = ExtResource("1_k710a")
+theme_override_styles/disabled = ExtResource("1_k710a")
+theme_override_styles/focus = ExtResource("1_k710a")
+text = "НАЧАТЬ"
+
+[connection signal="meta_clicked" from="MarginContainer/Panel/VBoxContainer/MarginContainerPanelFooter/HBoxContainer/RichTextLabel2" to="." method="_on_rich_text_label_2_meta_clicked"]
+[connection signal="pressed" from="MarginContainer/Panel/VBoxContainer/MarginContainerPanelFooter/HBoxContainer/ContinueButton" to="." method="_on_continue_button_pressed"]

@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://bon605scbe7eo"]
+
+[ext_resource type="SpriteFrames" uid="uid://bncpcwos8yaqy" path="res://Assets/Other/AnimatedBolt.tres" id="1_o8nt2"]
+
+[node name="ShakeLogo" type="AnimatedSprite3D"]
+transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, 0, 0, 0)
+billboard = 1
+texture_filter = 5
+sprite_frames = ExtResource("1_o8nt2")
+autoplay = "default"
+frame_progress = 0.411989

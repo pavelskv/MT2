@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://yyx8uy71ulpy"]
+
+[ext_resource type="Script" path="res://Scenes/PumpCollisionForError6/PumpCollisionForError6.gd" id="1_5r1t3"]
+[ext_resource type="PackedScene" uid="uid://ikba8qfunjsv" path="res://Scenes/UI/AnimatedBolt/AnimatedBolt.tscn" id="2_pauiu"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3c6kx"]
+size = Vector3(0.547049, 0.913437, 0.680664)
+
+[node name="PumpCollisionForError6" type="MeshInstance3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.6954, 0.595248, -4.02514)
+script = ExtResource("1_5r1t3")
+
+[node name="AnimatedBolt" parent="." instance=ExtResource("2_pauiu")]
+visible = false
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+collision_layer = 0
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0277083, -0.128964, 0.267992)
+shape = SubResource("BoxShape3D_3c6kx")

@@ -1,0 +1,28 @@
+[gd_scene load_steps=6 format=3 uid="uid://bm72iex1cj2j"]
+
+[ext_resource type="PackedScene" uid="uid://b3luct7erjty4" path="res://Assets/Models/Rooms/elektro.blend" id="1_o3jh3"]
+[ext_resource type="Script" path="res://Scenes/Pumps/pump_flow_controller.gd" id="2_oofmc"]
+[ext_resource type="Material" uid="uid://bg8kovdq206bs" path="res://Assets/Materials/vents.tres" id="3_i77jt"]
+[ext_resource type="PackedScene" uid="uid://bjc8sgrrbys3j" path="res://Scenes/UI/Slider/slider.tscn" id="4_f7shm"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_mlv55"]
+size = Vector3(0.316589, 0.904724, 0.28418)
+
+[node name="PumpFlowController" instance=ExtResource("1_o3jh3")]
+script = ExtResource("2_oofmc")
+
+[node name="electro" parent="." index="0"]
+material_overlay = ExtResource("3_i77jt")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="electro" index="0"]
+unique_name_in_owner = true
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="electro/StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000116825, 0.289703, 0)
+shape = SubResource("BoxShape3D_mlv55")
+
+[node name="Slider" parent="." index="1" instance=ExtResource("4_f7shm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.854871, 0)
+visible = false

@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://buyjemxmpjkf3"]
+
+[ext_resource type="PackedScene" uid="uid://fk024121g4q6" path="res://Assets/Models/Sensors/strelka.blend" id="1_06ifm"]
+
+[node name="SensorArrow" instance=ExtResource("1_06ifm")]
+
+[node name="strelka" parent="." index="0"]
+layers = 2
